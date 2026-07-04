@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>WNY Traffic Wall</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="https://www.nittec.org/cameras/" target="_blank" rel="noreferrer">
+        <span class="brand-mark"></span>
+        <span>
+          <strong>WNY Traffic Wall</strong>
+          <small>Buffalo-Niagara traffic camera wall</small>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <span class="status-pill" id="feed-status">Loading official NITTEC feed...</span>
+        <a class="primary-link" href="https://www.nittec.org/cameras/" target="_blank" rel="noreferrer">Open NITTEC</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-panel">
+        <div>
+          <p class="eyebrow">Official public feeds</p>
+          <h1>Western New York traffic wall</h1>
+        </div>
+        <p class="intro">
+          Auto-refreshing official NITTEC/NYSTA camera thumbnails with quick links
+          to each source camera for live playback.
+        </p>
+      </section>
+
+      <section class="controls" aria-label="Camera filters">
+        <label class="search-label">
+          Search
+          <input id="search" type="search" placeholder="Route, exit, bridge, road..." autocomplete="off" />
+        </label>
+        <div class="filters" id="filters"></div>
+      </section>
+
+      <section class="summary" aria-live="polite">
+        <strong id="count">0</strong> cameras shown
+        <span id="summary-note">U.S. active cameras only. Canada and raw IP-camera links excluded.</span>
+      </section>
+
+      <section class="grid" id="camera-grid" aria-label="Camera list"></section>
+    </main>
+
+    <template id="camera-card-template">
+      <article class="card">
+        <div class="camera-frame">
+          <img class="camera-thumb" alt="" loading="lazy" />
+          <span class="refresh-chip" title="Thumbnail refreshes every 15 seconds">↻ 15s</span>
+        </div>
+        <div class="card-body">
+          <div class="card-topline">
+            <span class="badge"></span>
+            <span class="source"></span>
+          </div>
+          <h2></h2>
+          <p class="meta"></p>
+          <p class="refresh-state"></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>

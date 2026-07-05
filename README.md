@@ -10,7 +10,7 @@ camera records from NITTEC and uses their public thumbnails and HLS streams.
 ## Use
 
 Open `index.html` in a browser, or serve the folder with any static web server.
-The wall shows official thumbnails and refreshes them every 15 seconds. NITTEC
+The wall shows official thumbnails and refreshes them every 30 seconds. NITTEC
 does not reliably cold-load individual camera modals from a URL, so the dashboard
 keeps one global NITTEC link and shows the NITTEC camera ID on each card.
 

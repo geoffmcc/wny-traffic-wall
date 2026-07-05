@@ -106,11 +106,11 @@ function renderCameras() {
   );
 
   count.textContent = visible.length.toString();
-  summaryNote.textContent = `${cameras.length} active U.S. NITTEC cameras loaded. Thumbnails refresh every 15 seconds.`;
+  summaryNote.textContent = `${cameras.length} active U.S. NITTEC cameras loaded. Thumbnails refresh every 30 seconds.`;
 }
 
 function getRefreshText(camera) {
-  return camera.videoUrl ? "Official thumbnail refreshes every 15s | source has live stream" : "Official thumbnail refreshes every 15s";
+  return camera.videoUrl ? "Official thumbnail refreshes every 30s | source has live stream" : "Official thumbnail refreshes every 30s";
 }
 
 function getCameraMeta(camera) {
@@ -138,7 +138,7 @@ function scheduleThumbnailRefresh(image, url) {
   const refresh = () => {
     image.src = withCacheBuster(url);
   };
-  const timer = window.setInterval(refresh, 15000);
+  const timer = window.setInterval(refresh, 30000);
   thumbnailTimers.add(timer);
 }
 
